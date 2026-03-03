@@ -5,23 +5,37 @@ format: pptx
 editor: visual
 ---
 
-## Quarto
+## Download the Necessary Packages
 
-Quarto enables you to weave together content and executable code into a finished presentation. To learn more about Quarto presentations see <https://quarto.org/docs/presentations/>.
+```{r}
+#Install the Package by removing the following  hashtag from each of the "install.packages"
+#install.packages("tidyverse")
+#install.packages("openxlsx")
+
+#Then library the packages
+library(tidyverse)
+library(openxlsx)
+```
 
 ## Bullets
 
-When you click the **Render** button a document will be generated that includes:
-
--   Content authored with markdown
--   Output from executable code
-
-## Code
-
-When you click the **Render** button a presentation will be generated that includes both content and the output of embedded code. You can embed code like this:
-
 ```{r}
-1 + 1
+World_Bank <-read.xlsx("C:/Users/xbox/OneDrive/Collect Files/Collect Files/MPP- Graduate  AU/Graduate Paperwork/PUAD 650/WorldDev.xlsx")
+
+World_Bank2 <- World_Bank %>%
+  rename("1960" = "1960.[YR1960]",
+         "1961" = "1961.[YR1961]",
+         "1962" = "1962.[YR1962]",
+         "1963" = "1963.[YR1963]",
+         "1964" = "1964.[YR1964]",
+         "1965" = "1965.[YR1965]",
+         "1966" = "1966.[YR1966]",
+         "1967" = "1967.[YR1967]")
+
+
+
+
+World_Bank2
 ```
 
 ## Slide
